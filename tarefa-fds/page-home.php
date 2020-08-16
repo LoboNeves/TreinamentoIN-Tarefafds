@@ -1,7 +1,7 @@
 <?php
     // Template Name: Home Page
 ?>
-
+            <!--   ---------- Section 1  ------------       -->
 <?php get_header(); ?> 
     <section class="section-1">
         <div id="imagem-section-1">
@@ -11,6 +11,15 @@
             <?php the_field('titulo_chamativo') ?>
         </div>​
     </section>
+
+        <!--   ---------- Section 2 -------------       -->
+    <section class="section-2">
+        <div id="texto-da-section-2">
+            <p>Resumo da página sobre</p>
+            <a href="/sobre">Saiba mais</a>
+        </div>​
+    </section>
+
         <!--   ---------- Section 3 -   PRODUTOS ------------       -->
     <?php
 
@@ -31,14 +40,16 @@
         <?php if($news->have_posts()):
             while($news->have_posts()):    
                 $news -> the_post(); ?>
-                <a href="/produtos/" class='news card'>
+                <div href="/produtos/" class='news card'>
                     <h2> <?php  the_title(); ?></h2>
+                    <a href="<?php the_permalink(); ?>">Link para o produto</a>
                     <?php the_content();?>
-                </a> 
+                </div> 
             <?php endwhile;
         else:?>
             <p>Nao temos noticias</p>
         <?php endif; ?>
+        <a href="/produtos" class='news card'>Clique aqui para ver todos produtos</a>
     </div>
 
 
@@ -63,10 +74,11 @@
         <?php if($news->have_posts()):
             while($news->have_posts()):    
                 $news -> the_post(); ?>
-                <a href="/noticias/" class='news card'>
+                <div href="/noticias/" class='news card'>
                     <h2> <?php  the_title(); ?></h2>
+                    <a href="<?php the_permalink(); ?>">Link para a notícia</a>
                     <?php the_content();?>
-                </a> 
+                </div> 
             <?php endwhile;
         else:?>
             <p>Nao temos noticias</p>

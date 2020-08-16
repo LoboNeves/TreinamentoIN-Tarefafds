@@ -5,10 +5,10 @@
 <?php get_header(); ?> 
     <section class="section-1">
         <div id="imagem-section-1">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/imagem-fundo.jpg">
+            <img src="<?php the_field('imagem_de_fundo') ?>">
         </div>​
         <div id="texto-da-section-1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas
+            <?php the_field('titulo_chamativo') ?>
         </div>​
     </section>
         <!--   ---------- Section 3 -   PRODUTOS ------------       -->

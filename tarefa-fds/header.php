@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarefa-fds</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/reset.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+    <?php wp_head(); ?>
 </head>
 <body>
     <header>
@@ -19,12 +20,3 @@
             </ul>
         </nav>
     </header>
-    
-    <section class="section-1">
-        <div id="texto-da-section-1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas
-        </div>​
-    </section>
-
-</body>
-</html>

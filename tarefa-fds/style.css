@@ -1,3 +1,11 @@
+/*
+Theme Name: Tarefa-fds
+Theme URI: www.tarefafds.com
+Author: Grupo 4
+Description: Site da tarefa do fim de semana
+Version: 1.0
+*/
+
 /*-------------- Header ---------------*/
 header{
     background: #202020;
@@ -42,10 +50,13 @@ header li a{
 /*-------------- Section-1 ---------------*/
 
 .section-1{
-    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+#imagem-section-1 img{
     height: 555px;
-    background-image: url("img/imagem-fundo.jpg");
-    background-size: cover;
+    width: 100%;
 }
 
 #texto-da-section-1{
@@ -53,7 +64,7 @@ header li a{
     width: 467px;
     height: 380px;
     left: 105px;
-    top: 100px;
+    top: 80px;
     font-size: 43px;
     line-height: 42px;
     color: #FFFFFF;

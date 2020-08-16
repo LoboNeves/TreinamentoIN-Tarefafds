@@ -78,7 +78,6 @@ form {
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-    background-color: rgb(89, 183, 226);
 }
 
 form div{
@@ -151,4 +150,124 @@ textarea {
     height: 100%;
     max-width: 500px;
     max-height: 600px;
+}
+
+#news-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0px;
+}
+
+
+.card{
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 3px #3338;
+    max-width: 300px;
+}
+
+.news{
+    padding: 10px;
+    border:2px solid blue;
+    font-size: 1.8rem;
+}
+.news h2{
+    font-size: 2.6rem;
+    font-weight: 630;
+}
+
+.news p{
+    margin:10px;
+    line-height: 1.5;
+    font-size: 1.5rem;
+}
+
+
+#news-pgnt{
+    padding: 20px 0;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+/*-------------- Footer ---------------*/
+
+
+.grid-6 {
+
+    margin-left: 10px;
+    margin-right: 10px;
+} 
+
+.assine {
+  background: #e7e4d8;
+  padding: 20px 10px ;
+}
+.assine .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.assine-info h2 {
+  font-size: 2.00em;
+}
+
+.assine-info p {
+  font-size: 1.0em;
+  font-style: italic;
+}
+
+.assine form label {
+  display: none;
+}
+
+.assine input {
+  border: 3px solid #252525;
+  background: none;
+  font-size: 1.0em;
+  font-style: italic;
+  font-family: Georgia, serif;
+  width: calc(100% - 140px);
+  padding: 10px;
+  float: left;
+}
+
+.assine button {
+  background: #252525;
+  border: none;
+  font-family: Georgia, serif;
+  text-transform: uppercase;
+  font-size: 1.0em;
+  color: #fff;
+  cursor: pointer;
+  width: 100px;
+  padding: 13px 0;
+}
+
+/*-------- image (page-sobre) -------------*/
+
+#sobre img {
+    width: 100%;
+  }
+#sobre {
+    text-align: center;
+    padding: 0 30px;
+}
+.container{
+    width: 100%;
+    max-width: 960px ;
+    margin: 0 auto;
+}
+
+/*-------------- Section-2 ---------------*/
+.section-2{
+    width: 70%;
+    height: 500px;
+}
+#texto-da-section-2{
+    position: absolute;
+    justify-content: center;
+    font-size: 43px;
+    line-height: 42px;
+    color:black;
 }

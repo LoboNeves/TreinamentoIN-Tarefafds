@@ -3,55 +3,50 @@
 ?>
 
 <?php get_header(); ?>
-    <div class="corpo-produtos">
-        <h1>Produtos</h1>
-        <div class="conteudo">
-            <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/botafogo.jpg">
+    <?php
+    $paged=get_query_var('page', 1);
+    $news= new WP_Query(
+        array(
+            'posts_per_page'=>2,
+            'paged'=>$paged,
+            'post_type'=>'noticia',
+            'post_status'=>'publish',
+            'suppress_filters'=>true,
+            'orderby'=>'name',
+            'order'=>'ASC'
+        )
+    );?>
+    <h1>Notícias</h1>
+    <div id='news-container' class='container'>
+    <?php if($news->have_posts()):
+    while($news->have_posts()):
+        
+        $news -> the_post(); ?>
+        
+            <div class='news card'>
+                <h2> <?php  the_title(); ?></h2>
+                <?php the_content();?>
             </div>
-            
-            <div class="texto-lado-imagem">
-                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas</p>
-            </div>
-
-        </div>
-
-        <div class="conteudo">
-            <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/botafogo.jpg">
-            </div>
-            
-            <div class="texto-lado-imagem">
-                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas</p>
-            </div>
-
-        </div>
-
-        <div class="conteudo">
-            <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/botafogo.jpg">
-            </div>
-            
-            <div class="texto-lado-imagem">
-                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas</p>
-            </div>
-
-        </div>
-
-        <div class="conteudo">
-            <div class="img">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/botafogo.jpg">
-            </div>
-            
-            <div class="texto-lado-imagem">
-                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus eu mi ac aliquam. Cras finibus, purus non aliquet molestie, lacus quam fermentum eros, eu varius massa justo eu est. Maecenas aliquet ut odio eu egestas</p>
-            </div>
-
-        </div>
+        
+    <?php endwhile;
+    else:?>
+    <p>Nao temos noticias</p>
+    <?php endif; ?>
     </div>
+    <div id='news-pgnt'>
+    <?php    
+    $big = 999999999;
+    echo paginate_links( array(
+        'base'=> str_replace($big, '%#%', get_pagenum_link($big)),
+        'format'=>'?paged=%#%',
+        'current'=>max(1, get_query_var('paged')),
+        'prev_text'=> __('Anterior'),
+        'next_text'=> __('Proximo'),
+        'total'=>$news ->max_num_pages)
+    );
+    ?>
+    <?php  wp_reset_postdata();?> 
+    </div>
+
 </body>
 </html>

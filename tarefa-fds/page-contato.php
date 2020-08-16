@@ -20,5 +20,4 @@
             <button type="submit">Enviar sua mensagem</button>
         </div>
     </form>
-</body>
-</html>
+<?php get_footer(); ?>

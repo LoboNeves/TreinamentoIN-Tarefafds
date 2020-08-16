@@ -47,6 +47,4 @@
     ?>
     <?php  wp_reset_postdata();?> 
     </div>
-
-</body>
-</html>
+<?php get_footer(); ?>

@@ -31,7 +31,7 @@
         <?php if($news->have_posts()):
             while($news->have_posts()):    
                 $news -> the_post(); ?>
-                <a href="http://tarefafds.local/produtos/" class='news card'>
+                <a href="/produtos/" class='news card'>
                     <h2> <?php  the_title(); ?></h2>
                     <?php the_content();?>
                 </a> 
@@ -63,7 +63,7 @@
         <?php if($news->have_posts()):
             while($news->have_posts()):    
                 $news -> the_post(); ?>
-                <a href="http://tarefafds.local/noticias/" class='news card'>
+                <a href="/noticias/" class='news card'>
                     <h2> <?php  the_title(); ?></h2>
                     <?php the_content();?>
                 </a> 

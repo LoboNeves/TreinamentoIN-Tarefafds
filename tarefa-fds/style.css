@@ -262,7 +262,7 @@ textarea {
 /*-------------- Section-2 ---------------*/
 .section-2{
     width: 70%;
-    height: 500px;
+    height: 300px;
 }
 #texto-da-section-2{
     position: absolute;
@@ -270,4 +270,47 @@ textarea {
     font-size: 43px;
     line-height: 42px;
     color:black;
+}
+
+/*-------------- Section-0 ---------------*/
+.icones {
+    padding: 0 px;
+    margin : 50px auto;
+    width: 1025px;
+    height: 150px;
+    
+
+}
+.rede{
+    width: 150px ;
+    height: 150px;
+    justify-items: center;
+    float: left;
+    margin-left: 50px;
+    transition: all 0.4s ease-out;
+    border-radius: 60%;
+
+}
+.rede h1{
+    justify-content: center ;
+    color: black;
+    font-size : 30px;
+}
+.rede:hover{
+    cursor: pointer; 
+    transform: translateY(-20px);
+    box-shadow: 4px 20px 16px 0px rgba(50,50,50,0.45);
+}
+.rede#facebook{
+    background-color: #2372a3;
+}
+.rede#instagran{
+    background-color: #3f729b;
+}
+.rede#twitter{
+    background-color: #3f729b;
+}
+.icon{
+    margin:0px auto ;
+    padding: 35px;
 }

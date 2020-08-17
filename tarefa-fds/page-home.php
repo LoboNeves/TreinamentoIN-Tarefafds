@@ -13,9 +13,9 @@
     </section>
 
         <!--   ---------- Section 2 -------------       -->
-    <section class="section-2">
-        <div id="texto-da-section-2">
-            <p>Resumo da página sobre</p>
+    <section class="section-sobre">
+        <div id="texto-da-section-sobre">
+            <p><?php the_field('resumo_do_sobre') ?></p>
             <a href="/sobre">Saiba mais</a>
         </div>​
     </section>
@@ -42,14 +42,14 @@
                 $news -> the_post(); ?>
                 <div href="/produtos/" class='news card'>
                     <h2> <?php  the_title(); ?></h2>
-                    <a href="<?php the_permalink(); ?>">Link para o produto</a>
                     <?php the_content();?>
+                    <a href="<?php the_permalink(); ?>">Link para o produto</a>
                 </div> 
             <?php endwhile;
         else:?>
             <p>Nao temos noticias</p>
         <?php endif; ?>
-        <a href="/produtos" class='news card'>Clique aqui para ver todos produtos</a>
+        <a href="/produtos" class='news card'>Clique aqui para ver todos os produtos</a>
     </div>
 
 
@@ -83,8 +83,7 @@
         else:?>
             <p>Nao temos noticias</p>
         <?php endif; ?>
+        <a href="/noticias" class='news card'>Clique aqui para ver todas as notícias</a>
     </div>
 
 <?php get_footer(); ?>   
-</body>
-</html>

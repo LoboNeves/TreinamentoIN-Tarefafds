@@ -7,7 +7,7 @@
     $paged=get_query_var('paged', 1);
     $news= new WP_Query(
         array(
-            'posts_per_page'=>4,
+            'posts_per_page'=>2,
             'paged'=>$paged,
             'post_type'=>'produto',
             'post_status'=>'publish',
